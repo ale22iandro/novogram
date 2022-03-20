@@ -5,7 +5,11 @@ class Post < ApplicationRecord
   has_many :hash_tags, through: :post_hash_tags
   validate :image_presence
   after_commit :create_hash_tags, on: :create
+  has_many :likes
 
+  def liked?(user)
+    !!self.likes.find{|like| like.user_id == user.id}
+  end
   def create_hash_tags
     extract_name_hash_tags.each do |name|
       hash_tags.create(name: name)
