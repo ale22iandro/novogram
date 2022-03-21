@@ -1,8 +1,10 @@
 <div class="post-show row">
+
   <div class="col-md-8">
     <%= image_tag @post.image, class: 'image' %>
   </div>
   <div class="col-md-4">
+
     <div class="user">
       <div class="avatar">
         <% if @post.user.avatar.attached? %>
@@ -38,13 +40,17 @@
     </div>
 
     <div class="row">
+
       <div class="col-md-8">
-        <div class="post-comments buffer-top">
-          <div class="buffer-both">
-            <%= render partial: 'comments/comment',
-                       collection: @post.comments.except(@new_comment) %>
+
+          <div class="post-comments buffer-top overflow-auto">
+
+            <div class="buffer-both">
+              <%= render partial: 'comments/comment',
+                         collection: @post.comments.except(@new_comment) %>
+            </div>
           </div>
-        </div>
+
       </div>
     </div>
     <%= render partial: 'comments/form',

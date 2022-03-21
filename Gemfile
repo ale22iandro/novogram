@@ -62,3 +62,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "i18n", "~> 1.10"
 gem "pagy", "~> 5.10"
+
+gem "devise-i18n", "~> 1.10"

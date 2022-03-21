@@ -8,7 +8,7 @@
         <em><strong><%= comment.user_name %></strong></em>
       <% end %>
     </span>
-    <em><%= l comment.created_at, format: :short %></em>
+    <em><%= l comment.created_at, format: :long %></em>
     <% if current_user == @post.user %>
       <%= link_to(
               fa_icon('trash'), post_comment_path(comment.post, comment),
