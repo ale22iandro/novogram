@@ -12,18 +12,15 @@
 
 <body>
 <!--Navigation Bar-->
-<div>
+<div class="locale">
   <% I18n.available_locales.each do |locale| %>
     <%= link_to locale, root_path(locale: locale),
-                class: 'btn btn-secondary' %>
+                class: 'btn btn-secondary btn-sm' %>
   <% end %>
 </div>
 <nav class="navbar navbar-light bg-light d-flex">
-
   <div class="container">
-
     <div class="logo">
-
       <a class="navbar-brand" href="
         <% home_index_path %>">
         <%= fa_stacked_icon "camera inverse", base: "circle" %>

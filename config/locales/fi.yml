@@ -1,5 +1,8 @@
 ---
 fi:
+  post:
+    comment:
+      send: 'Sentti'
   activerecord:
     errors:
       messages:

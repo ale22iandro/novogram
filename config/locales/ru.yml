@@ -1,5 +1,8 @@
 ---
 ru:
+  post:
+    comment:
+      send: 'Отправить'
   activerecord:
     errors:
       messages:

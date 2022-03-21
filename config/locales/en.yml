@@ -1,5 +1,8 @@
 ---
-en-US:
+en:
+  post:
+    comment:
+      send: 'Send'
   activerecord:
     errors:
       messages:

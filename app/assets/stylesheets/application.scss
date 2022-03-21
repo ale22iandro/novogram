@@ -17,6 +17,11 @@
 @import "font-awesome";
 @import "users";
 @import "posts";
+@import "home";
+@import "comments";
+.locale{
+  padding-left: 15px;
+}
 .container{
   max-width: 1000px;
 }
