@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   validate :image_presence
   after_commit :create_hash_tags, on: :create
   has_many :likes
+  has_many :comments, dependent: :destroy
 
   def liked?(user)
     !!self.likes.find{|like| like.user_id == user.id}

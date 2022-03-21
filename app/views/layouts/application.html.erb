@@ -15,7 +15,7 @@
   <nav class="navbar navbar-light bg-light d-flex">
     <div class="container">
       <div class="logo">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="<% home_index_path %>">
           <%= fa_stacked_icon "camera inverse", base: "circle"%>
           Instagram
         </a>
@@ -33,6 +33,9 @@
         <% if user_signed_in? %>
           <a href="<%= user_path(current_user)%>">
             <i class="fa fa-user"></i>
+          </a>
+          <a href="<%= destroy_user_session_path%>" data-method="delete">
+            <i class="fa fa-sign-out"></i>
           </a>
         <% else %>
           <a href="<%= new_user_session_path%>">

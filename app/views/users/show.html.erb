@@ -2,28 +2,41 @@
   <div class="profile row">
     <div class="col-md-4 avatar">
       <div class="wrapper">
-        <% if current_user.avatar.attached? %>
-          <%= image_tag current_user.avatar %>
-        <%end %>
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar %>
+        <% end %>
       </div>
     </div>
 
     <div class="col-md-8 basic-info">
       <div class="user-wrapper">
-        <h2 class="username"><%= current_user.username %></h2>
-        <a class="edit-profile" href="<%= edit_user_path(current_user) %>">
-          <button>Edit Profile</button>
+        <% if @user.id == current_user.id %>
+          <h2 class="username"><%= current_user.username %></h2>
+          <a class="edit-profile">
+            <a class="edit-profile" href="<%= edit_user_path(current_user) %>">
+              <button>Edit Profile</button>
+            </a>
+        <% else %>
+          <a class="edit-profile" href="">
+            <% if current_user.subscribed?(@user) %>
+              <%= link_to "Unsubscribe", unsubscribe_path(@user), method: :delete, form_class: 'btn btn-danger' %>
+
+            <% else %>
+              <%= link_to "Subscribe", subscribe_path(@user), method: :put, form_class: 'btn btn-primary' %>
+            <% end %>
+        <%# byebug %>
+        <% end %>
         </a>
       </div>
       <ul class="posts">
-        <ul class="posts">
-          <li><span><%= @posts.count %></span> posts</li>
-        </ul>
+
+        <li><span><%= @posts.count %></span> posts</li>
+
         <li><span>195</span> followers</li>
         <li><span>345</span> following</li>
       </ul>
       <h2 class="name"><%= current_user.name %></h2>
-      <%=link_to current_user.website, current_user.website, class:  'website' %>
+      <%= link_to current_user.website, current_user.website, class: 'website' %>
     </div>
   </div>
 </div>
@@ -31,16 +44,8 @@
   <a class="tab active" href="">
     <i class="fa fa-th"></i>
     POSTS
-    <div class="user-images">
-      <% @posts.each do |post|%>
-        <div class="wrapper">
-          <%=link_to post_path(post) do %>
-            <%=image_tag post.image %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
   </a>
+
 
   <a class="tab" href="">
     <i class="fa fa-bookmark"></i>
@@ -50,4 +55,13 @@
     <i class="fa fa-tag"></i>
     TAGGED
   </a>
+</div>
+<div class="user-images">
+  <% @posts.each do |post| %>
+    <div class="wrapper">
+      <%= link_to post_path(post) do %>
+        <%= image_tag post.image %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

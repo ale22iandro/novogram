@@ -1,15 +1,20 @@
 class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+    @favorite_posts = current_user.favorited_by_type('Post')
+  end
   def like
-    @post = Post.all.find(params[:id])
+    @post=Post.all.find(params[:id])
     Like.create(user_id: current_user.id, post_id: @post.id)
     redirect_to post_path(@post)
+  end
+  def show
+    #@new_comment = @post.comments.build(params[:comment])
+    @post = Post.find(params[:id])
   end
   def create
     Post.create(post_params)
     redirect_to root_path
-  end
-  def show
-    @post = Post.find(params[:id])
   end
   def destroy
     @post = current_user.posts.find(params[:id])

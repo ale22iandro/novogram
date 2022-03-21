@@ -2,16 +2,20 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
+gem 'jquery-rails'
+gem "bootstrap", "~> 5.1"
+gem "font-awesome-rails"
+gem "devise", "~> 4.8"
 gem 'rails', '~> 6.1.4', '>= 6.1.4.7'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
-gem 'jquery-rails'
+
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -43,6 +47,7 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :test do
@@ -55,7 +60,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem "bootstrap", "~> 5.1"
-gem "font-awesome-rails"
-gem "devise", "~> 4.8"
+gem "i18n", "~> 1.10"
+gem "pagy", "~> 5.10"

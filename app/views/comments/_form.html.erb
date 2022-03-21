@@ -1,0 +1,19 @@
+<%= form_for [@post, comment] do |f| %>
+
+
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: 'form-control' %>
+  </div>
+
+  <% unless user_signed_in? %>
+    <div class="form-group">
+      <%= f.label :username %>
+      <%= f.text_field :username, class: 'form-control' %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit 'Отправить', class: 'btn btn-primary' %>
+  </div>
+<% end %>
