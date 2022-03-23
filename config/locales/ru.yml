@@ -1,8 +1,11 @@
 ---
 ru:
+  home:
+    create_post: 'Создать новый пост'
   post:
     comment:
-      send: 'Отправить'
+      send: 'Новый комментарий'
+      new_comment: 'Новый комментарий:'
   activerecord:
     errors:
       messages:

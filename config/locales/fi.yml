@@ -1,8 +1,11 @@
 ---
 fi:
+  home:
+    create_post: 'Posti post'
   post:
     comment:
       send: 'Sentti'
+      new_comment: 'Novvo Commenti:'
   activerecord:
     errors:
       messages:

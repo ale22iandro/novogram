@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <div class="form-upload">
-    <%= form_for Post.new do |f| %>
+    <%= form_with model: Post.new do |f| %>
       <div class="form-group">
         <%= f.text_field :description %>
       </div>

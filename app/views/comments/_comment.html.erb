@@ -1,19 +1,19 @@
-<div>
-  <p><%= comment.body %></p>
-  <p>
-    <span>
+<div class="comment">
+  <%= comment.body %>
+
+
       <% if comment.user.present? %>
         <%= render partial: 'users/user', object: comment.user %>
       <% else %>
-        <em><strong><%= comment.user_name %></strong></em>
+       <%= comment.user_name %>
       <% end %>
-    </span>
-    <em><%= l comment.created_at, format: :long %></em>
+
+    <%= l comment.created_at, format: :long %>
     <% if current_user == @post.user %>
       <%= link_to(
               fa_icon('trash'), post_comment_path(comment.post, comment),
               method: :delete, data: {confirm: 'destroy_confirm'}
           ) %>
     <% end %>
-  </p>
+
 </div>

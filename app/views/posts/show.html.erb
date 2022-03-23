@@ -2,6 +2,21 @@
 
   <div class="col-md-8">
     <%= image_tag @post.image, class: 'image' %>
+    <div class="delete">
+      <% if current_user.posts.exists?(@post.id) %>
+        <%= link_to 'Remove', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'} %>
+      <% end %>
+      <% if user_signed_in? %>
+
+        <% if @post.liked?(current_user) %>
+          <%= button_to "Like", like_path(@post), method: :put, disabled: true, form_class: 'fa fa-thumbs-up' %>
+        <% else %>
+          <%= button_to "Like", like_path(@post), method: :put, class: 'fa thumb-up' %>
+
+        <% end %>
+      <% end %>
+
+    </div>
   </div>
   <div class="col-md-4">
 
@@ -12,15 +27,7 @@
             <%= image_tag @post.user.avatar %>
           <% end %>
         <% end %>
-        <% if user_signed_in? %>
 
-          <% if @post.liked?(current_user) %>
-            <%= button_to "Like", like_path(@post), method: :put, disabled: true, form_class: 'fa fa-thumbs-up' %>
-          <% else %>
-            <%= button_to "Like", like_path(@post), method: :put, class: 'fa thumb-up' %>
-
-          <% end %>
-        <% end %>
       </div>
       <%= link_to @post.user.username, user_path(@post.user), class: 'username' %>
     </div>
@@ -33,24 +40,15 @@
         <% end %>
       <% end %>
     </div>
-    <div class="delete">
-      <% if current_user.posts.exists?(@post.id) %>
-        <%= link_to 'Remove', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'} %>
-      <% end %>
-    </div>
 
-    <div class="row">
-
-      <div class="col-md-8">
-
+    <div class="comment-container">
+      <div>
           <div class="post-comments buffer-top">
-
             <div class="buffer-both">
               <%= render partial: 'comments/comment',
                          collection: @post.comments.except(@new_comment) %>
             </div>
           </div>
-
       </div>
     </div>
     <%= render partial: 'comments/form',
