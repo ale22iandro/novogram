@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   has_many :hash_tags, through: :post_hash_tags
   validate :image_presence
   after_commit :create_hash_tags, on: :create
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
   def liked?(user)
