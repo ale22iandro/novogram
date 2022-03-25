@@ -21,23 +21,22 @@
 <nav class="navbar navbar-light bg-light d-flex">
   <div class="container">
     <div class="logo">
-      <a class="navbar-brand" href="
-        <% home_index_path %>">
+      <a class="navbar-brand"
+      <%= link_to fa_icon('home'), home_index_path %>
         <%= fa_stacked_icon "camera inverse", base: "circle" %>
         Instagram
       </a>
     </div>
     <div class="m-auto">
-      <form class="form-inline search-form">
-        <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>
-          <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: '#search' %>
-        <% end %>
-      </form>
+      <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>
+        <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: '#search' %>
+      <% end %>
     </div>
     <div class="user-section">
-      <a><i class="fa fa-compass"></i></a>
 
-      <a><i class="fa fa-heart"></i></a>
+      <a href="<%= search_favorites_path %>">
+      <i class="fa fa-heart"></i>
+      </a>
       <% if user_signed_in? %>
         <a href="<%= user_path(current_user) %>">
           <i class="fa fa-user"></i>

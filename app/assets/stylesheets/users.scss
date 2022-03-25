@@ -1,31 +1,36 @@
-.profile .avatar{
-  .wrapper{
+.profile .avatar {
+  .wrapper {
     width: 140px;
     height: 140px;
     margin: 40px auto;
   }
-  .wrapper img{
+
+  .wrapper img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
   }
 }
 
-.profile .basic-info{
+.profile .basic-info {
   padding: 40px 0;
-  .user-wrapper{
+
+  .user-wrapper {
     display: flex;
   }
-  .username{
+
+  .username {
     font-size: 30px;
     line-height: 40px;
     font-weight: 200;
   }
-  .edit-profile{
+
+  .edit-profile {
     margin-left: 20px;
     margin-top: 5px;
   }
-  .edit-profile button{
+
+  .edit-profile button {
     background-color: transparent;
     border-radius: 5px;
     border: 1px solid #dbdbdb;
@@ -34,23 +39,28 @@
     padding: 4px 10px;
     font-weight: 500;
   }
-  ul.posts{
+
+  ul.posts {
     padding-left: 0;
-    > li{
+
+    > li {
       display: inline;
       padding-right: 40px;
       font-size: 15px;
-      span{
+
+      span {
         color: #262626;
         font-weight: 600;
       }
     }
   }
-  .name{
+
+  .name {
     font-size: 15px;
     font-weight: 600;
   }
-  .website{
+
+  .website {
     color: #003569;
     text-decoration: none;
     font-size: 15px;
@@ -58,12 +68,12 @@
   }
 }
 
-.user-tabs{
+.user-tabs {
   border-top: 1px solid #efefef;
   display: flex;
   justify-content: center;
 
-  a.tab{
+  a.tab {
     height: 35px;
     margin-right: 50px;
     line-height: 45px;
@@ -71,31 +81,34 @@
     font-size: 12px;
     font-weight: 500;
     text-align: center;
-    i{
+
+    i {
       padding-right: 1px;
     }
-    &:hover{
+
+    &:hover {
       text-decoration: none;
     }
   }
-  a.active{
+
+  a.active {
     border-top: 1px solid #262626;
     color: #262626;
   }
 }
 
-.user-images{
+.user-images {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin: 0 20px;
 
-  .wrapper{
+  .wrapper {
     width: 280px;
     height: 280px;
     margin: 15px;
 
-    img{
+    img {
       width: 100%;
       border-radius: 4%;
       width: 278px;
@@ -107,69 +120,77 @@
 }
 
 /*  Edit Profile page */
-.user-edit-page{
+.user-edit-page {
   display: flex;
   margin-top: 60px;
   min-height: 500px;
 
-  .actions{
+  .actions {
     width: 220px;
     border: 1px solid #dbdbdb;
 
-    .nav-link{
+    .nav-link {
       font-size: 14px;
       background-color: white;
       color: black;
       border-radius: 0;
       padding: 12px 0 12px 30px;
-      &:hover{
+
+      &:hover {
         cursor: pointer;
       }
     }
-    .nav-pills .nav-link.active{
+
+    .nav-pills .nav-link.active {
       border-left: 2px solid;
       font-weight: 600;
     }
   }
-  .details{
+
+  .details {
     flex: 1;
     border: 1px solid #dbdbdb;
-    border-left:none;
+    border-left: none;
   }
 }
 
 /* Form Edit User */
-.form-edit-user{
+.form-edit-user {
   padding: 30px 100px 10px 50px;
 
-  .form-group, input{
+  .form-group, input {
     font-size: 14px;
     color: black;
   }
-  input, textarea{
+
+  input, textarea {
     border: 1px solid #efefef;
   }
-  .col-form-label{
+
+  .col-form-label {
     text-align: right;
     font-weight: 600;
   }
 
-  .avatar{
+  .avatar {
     height: 38px;
     width: 38px;
     border-radius: 50%;
   }
-  .username{
+
+  .username {
     font-size: 20px;
     line-height: 22px;
     margin-bottom: 0;
   }
-  .change-photo{
+
+  .change-photo {
     color: #3897f0;
     text-decoration: none;
     font-size: 13px;
   }
-  input[type='submit']{
+
+  input[type='submit'] {
     color: white;
   }
 }

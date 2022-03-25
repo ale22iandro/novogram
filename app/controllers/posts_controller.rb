@@ -3,9 +3,15 @@ class PostsController < ApplicationController
     @posts = Post.all
     @favorite_posts = current_user.favorited_by_type('Post')
   end
+
   def like
     @post=Post.all.find(params[:id])
-    Like.create(user_id: current_user.id, post_id: @post.id)
+    if @post.liked?(current_user)
+      @post.likes.find_by(user_id: current_user.id).destroy
+    else
+      Like.create(user_id: current_user.id, post_id: @post.id)
+    end
+
     redirect_to post_path(@post)
   end
   def show

@@ -1,9 +1,5 @@
 <div class="search-page">
-  <% if @posts.exists? %>
-    <h1>Top Posts</h1>
-  <% else %>
-    <h1>Oop! No matching posts ...</h1>
-  <% end %>
+  <h1>Избранное</h1>
 
   <div class="user-images">
     <% @posts.each do |post|%>
