@@ -1,5 +1,9 @@
 ---
 ru:
+  Unsubscribe: "Отписаться"
+  Subscribe: "Подписаться"
+  description: "Новый подписчик!"
+  name: "Имя"
   home:
     create_post: 'Создать новый пост'
   post:

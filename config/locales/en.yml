@@ -1,5 +1,8 @@
 ---
 en:
+  Unsubscribe: "Unsubscribe"
+  Subscribe: "Subscribe"
+  description: "New subscriber!"
   home:
     create_post: 'New post'
     file_field: 'Choose file'
@@ -221,3 +224,4 @@ en:
       long: "%B %d, %Y %I:%M %p"
       short: "%d %b %I:%M %p"
     pm: pm
+  name: "Name"

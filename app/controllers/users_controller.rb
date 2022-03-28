@@ -6,8 +6,10 @@ class UsersController < ApplicationController
 
   def subscribe
     @user = User.all.find(params[:id])
-    s = Subscribtion.create(user_id: current_user.id, followed_id: @user.id)
-    s.save
+    new_subscriber = Subscribtion.create(user_id: current_user.id, followed_id: @user.id)
+    new_subscriber.save
+
+    EventMailer.subscription(@user.email, @user.name).deliver_now
     redirect_to user_path(@user)
   end
 
