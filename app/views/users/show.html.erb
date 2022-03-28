@@ -19,12 +19,12 @@
         <% else %>
           <a class="edit-profile" href="">
             <% if current_user.subscribed?(@user) %>
-              <%= link_to "Unsubscribe", unsubscribe_path(@user), method: :delete, form_class: 'btn btn-danger' %>
+              <%= link_to I18n.t('Unsubscribe'), unsubscribe_path(@user), method: :delete, class: 'btn btn-danger' %>
 
             <% else %>
-              <%= link_to "Subscribe", subscribe_path(@user), method: :put, form_class: 'btn btn-primary' %>
+              <%= link_to I18n.t('Subscribe'), subscribe_path(@user), method: :put, class: 'btn btn-primary' %>
             <% end %>
-        <%# byebug %>
+
         <% end %>
         </a>
       </div>
@@ -32,8 +32,8 @@
 
         <li><span><%= @posts.count %></span> posts</li>
 
-        <li><span>195</span> followers</li>
-        <li><span>345</span> following</li>
+        <li><span><%= @user.followers_count %></span> followers</li>
+        <li><span><%= @user.followed_count %></span> following</li>
       </ul>
       <h2 class="name"><%= current_user.name %></h2>
       <%= link_to current_user.website, current_user.website, class: 'website' %>

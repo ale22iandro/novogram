@@ -1,5 +1,10 @@
 ---
 fi:
+  pagy:
+    nav:
+      next: 'Seuraava'
+      prev: 'Edellinen'
+
   home:
     create_post: 'Posti post'
   post:
@@ -215,3 +220,5 @@ fi:
       long: "%e. %Bta %Y %H.%M"
       short: "%e.%m. %H.%M"
     pm: iltapäivä
+  Unsubscribe: "Lopeta"
+  Subscribe: "Seuraa"

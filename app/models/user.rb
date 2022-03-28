@@ -13,5 +13,11 @@ class User < ApplicationRecord
     s=Subscribtion.all
     s.where(user_id: self.id, followed_id: user.id).exists?
   end
+  def followers_count
+    @count = Subscribtion.where(followed_id: self.id).count
+  end
+  def followed_count
+    @f_count=Subscribtion.where(user_id: self.id).count
+  end
 
 end

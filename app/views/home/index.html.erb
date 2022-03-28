@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <div class="form-upload">
+  <div class="form-upload mb-3">
     <%= form_with model: Post.new do |f| %>
       <div class="form-group">
         <%= f.text_field :description %>
@@ -12,11 +12,14 @@
       </div>
       <br>
       <div class="text-center">
-        <%= f.submit 'Create Post', class: 'btn btn-primary' %>
+        <%= f.submit t('home.create_post'), class: 'btn btn-primary' %>
       </div>
     <% end %>
 <% end %>
 </div>
+
+<%== pagy_bootstrap_nav @pagy %>
+
 <div class="posts">
   <% @posts.each do |post| %>
     <section class="post">
@@ -43,7 +46,12 @@
             <%= word %>
           <% end %>
         <% end %>
+        <div style="text-align: right">
+        Комментарии: <%= post.comments.count %>
+        </div>
       </div>
     </section>
   <% end %>
+
 </div>
+<%== pagy_bootstrap_nav @pagy %>

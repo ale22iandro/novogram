@@ -8,8 +8,6 @@ class UsersController < ApplicationController
     @user = User.all.find(params[:id])
     s = Subscribtion.create(user_id: current_user.id, followed_id: @user.id)
     s.save
-
-
     redirect_to user_path(@user)
   end
 
