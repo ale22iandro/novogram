@@ -12,24 +12,26 @@
 
 <body>
 <!--Navigation Bar-->
-<div class="locale">
-  <% I18n.available_locales.each do |locale| %>
-    <%= link_to locale, root_path(locale: locale),
-                class: 'btn btn-secondary btn-sm' %>
-  <% end %>
-</div>
+
 <nav class="navbar navbar-light bg-light d-flex">
   <div class="container">
     <div class="logo">
       <a class="navbar-brand"
       <%= link_to fa_icon('home'), home_index_path %>
         <%= fa_stacked_icon "camera inverse", base: "circle" %>
-        Instagram
+        Novogram
       </a>
     </div>
+
     <div class="m-auto">
       <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>
         <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: '#search' %>
+      <% end %>
+    </div>
+    <div class="locale">
+      <% I18n.available_locales.each do |locale| %>
+        <%= link_to locale, root_path(locale: locale),
+                    class: 'btn btn-secondary btn-sm' %>
       <% end %>
     </div>
     <div class="user-section">
@@ -65,11 +67,11 @@
       <li>ABOUT US
       </li>
 
-      <li>PROFILES</li>
+      <li><%= link_to 'PROFILES', users_path%></li>
       <li>HASHTAGS</li>
       <li>LANGUAGE</li>
     </ul>
-    <p> © 2022 INSTAGRAM </p>
+    <p> © 2022 NOVOGRAM </p>
   </nav>
 </footer>
 </body>

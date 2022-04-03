@@ -2,9 +2,9 @@
 
   <span>
     <% if request.path == user_path(user) %>
-      <%= user.name %>
+     Написал <%= user.name %>
     <% else %>
-      <%= link_to user.name, user_path(user) %>
+      Написал <%= link_to user.name, user_path(user) %>
     <% end %>
   </span>
 </span>

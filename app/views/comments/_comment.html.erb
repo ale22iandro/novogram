@@ -5,10 +5,11 @@
       <% if comment.user.present? %>
         <%= render partial: 'users/user', object: comment.user %>
       <% else %>
-       <%= comment.user_name %>
+       Написал <%= comment.user_name %>
       <% end %>
-
+  <div class="comment-time">
     <%= l comment.created_at, format: :long %>
+  </div>
     <% if current_user == @post.user %>
       <%= link_to(
               fa_icon('trash'), post_comment_path(comment.post, comment),

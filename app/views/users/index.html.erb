@@ -1,0 +1,10 @@
+<h1>Список пользователей:</h1>
+
+<% @users.each do |user| %>
+  <div class="user-section">
+  <%= user.name %>
+  <%= user.email %>
+    <%= link_to 'Профиль', user_path(user) %>
+  </div>
+
+<% end %>

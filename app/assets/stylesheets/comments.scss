@@ -1,20 +1,21 @@
 .comment {
   font-size: 1em;
-  color: #730E15;
+  color: #30E155;
   padding: 0;
   margin: 0;
+  border-style: #000000;
 }
-
 .comment-container {
   max-height: 40vh;
   overflow-y: scroll;
+  border-style: #000000;
 
 }
-
 
 
 .comment-time {
   color: #003569;
+  font-size: 0.75em;
 
 }
 
