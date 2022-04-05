@@ -8,11 +8,10 @@ Rails.application.routes.draw do
     root to: 'home#index'
     resources :users
     resources :posts
+
     get 'search' => 'search#index'
     put '/post/:id/like', to: 'posts#like', as: 'like'
-    post '/users/:id/follow', to: "users#follow", as: "follow_user"
-    post '/users/:id/unfollow', to: "users#unfollow", as: "unfollow_user"
-    resources :post do
+    resources :posts do
     # Вложенный ресурс комментов
     # Нам понадобится два экшена: create и destroy
       resources :comments, only: [:create, :destroy]

@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: :destroy
   before_action :set_post, only: [:create, :destroy]
+  before_action :set_comment, only: :destroy
+
 
 
   # GET /comments or /comments.json
@@ -25,7 +26,7 @@ class CommentsController < ApplicationController
   def destroy
     message = {notice: 'destroyed'}
 
-    if current_user == comment.user(@comment)
+    if current_user == @comment.user || current_user == @post.user
       @comment.destroy!
     else
       message = {alert: 'error'}

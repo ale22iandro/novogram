@@ -8,8 +8,8 @@ en:
     file_field: 'Choose file'
   post:
     comment:
-      send: 'Send'
-      new_comment: 'New comment:'
+      send: 'New comment'
+      new_comment: 'New_comment'
   activerecord:
     errors:
       messages:

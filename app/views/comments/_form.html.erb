@@ -3,7 +3,7 @@
 
   <div class="form-group">
     <%#= f.label I18n.t('post.comment.new_comment') %>
-    <%= f.text_area :body, class: 'form-control' %>
+    <%= f.text_area :body,  class: 'form-control', placeholder: "максимум 140 знаков" %>
   </div>
 
   <% unless user_signed_in? %>
