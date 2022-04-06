@@ -1,16 +1,16 @@
-.homepage{
-  .form-upload{
+.homepage {
+  .form-upload {
     border: 1px solid #dbdbdb;
     height: auto;
     margin: 30px 180px;
     padding: 30px;
     border-radius: 3px;
 
-    input[type='text']{
+    input[type='text'] {
       width: 100%;
     }
 
-    .images{
+    .images {
       border: 1px solid #dbdbdb;
       color: grey;
       width: 100px;
@@ -19,7 +19,8 @@
       margin: 0 auto;
       padding-top: 35px;
     }
-    .description{
+
+    .description {
       border: 1px solid #dbdbdb;
       border-radius: 5px;
       width: 90%;
@@ -29,105 +30,117 @@
     }
   }
 
-  .posts{
+  .posts {
     margin: 50px 180px 10px;
 
-    .post{
+    .post {
       border: 1px solid #dbdbdb;
       margin: 60px 0;
       border-radius: 3px;
-      .user{
+
+      .user {
         border-bottom: 1px solid #efefef;
         display: flex;
-        .avatar{
+
+        .avatar {
           width: 30px;
           height: 30px;
           margin: 8px;
 
-          img{
+          img {
             width: 100%;
             height: 100%;
             border: 1px solid #efefef;
             border-radius: 50%;
           }
         }
-        .username{
+
+        .username {
           padding-top: 13px;
           color: #262626;
           font-size: 14px;
           font-weight: 600;
-          &:hover{
+
+          &:hover {
             text-decoration: none;
           }
         }
       }
 
-      .main-image{
+      .main-image {
         width: 100%;
         border-bottom: 1px solid #efefef;
       }
-      .description{
+
+      .description {
         padding: 20px;
       }
     }
   }
 
-  .pagination{
-    span{
+  .pagination {
+    span {
       padding-right: 10px;
     }
   }
 }
 
-.post-show{
+.post-show {
   margin: 30px 5px 0;
   border: 1px solid #dbdbdb;
 
-  .col-md-8{
+  .col-md-8 {
     padding: 0;
-    .image{
+
+    .image {
       width: 100%;
     }
   }
 
-  .user{
+  .user {
     display: flex;
     padding: 0px 0;
     border-bottom: 1px solid #efefef;
 
-    .avatar{
+    .avatar {
       width: 40px;
       height: 40px;
       margin: 8px;
-      img{
+
+      img {
         width: 100%;
         height: 100%;
         border: 1px solid #efefef;
         border-radius: 50%;
       }
     }
-    .username{
+
+    .username {
       padding-top: 15px;
       color: #262626;
       font-size: 14px;
       font-weight: 600;
-      &:hover{
+
+      &:hover {
         text-decoration: none;
       }
     }
   }
 
-  .description{
+  .description {
     padding: 15px 0;
   }
-  .delete{
+
+  .delete {
     padding-top: 20px;
-    a{
+
+    a {
       font-size: 15px;
       text-decoration: underline;
     }
   }
-  i.fa{
+
+  i.fa {
     font-size: 22px;
     color: #000000d4;
   }
