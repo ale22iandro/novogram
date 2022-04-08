@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # показываем список всех зарегистрированных пользователей
   def index
     @users = User.all
   end
@@ -6,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts.order(created_at: :desc)
   end
-
+  # создаем подписчика и отправляем уведомление автору поста
   def subscribe
     @user = User.all.find(params[:id])
     new_subscriber = Subscribtion.create(user_id: current_user.id, followed_id: @user.id)
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
     EventMailer.subscription(@user.email, @user.name).deliver_now
     redirect_to user_path(@user)
   end
-
+  # отписываемся
 
   def unsubscribe
     @user = User.all.find(params[:id])

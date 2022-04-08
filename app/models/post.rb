@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   after_commit :create_hash_tags, on: :create
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-
+  # если уже лайкнул, то повторно низя
   def liked?(user)
     !!self.likes.find{|like| like.user_id == user.id}
   end

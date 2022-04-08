@@ -1,4 +1,5 @@
 class SearchController < ApplicationController
+  # создаем коллекцию постов по хэштэгу или описанию
   def index
     if params[:query].start_with?('#')
       query  = params[:query].gsub('#', '')
@@ -7,6 +8,7 @@ class SearchController < ApplicationController
       @posts = Post.where("description like ?", "%#{params[:query]}%")
     end
   end
+  # создаем коллекцию постов, которые лайкнул текущий пользователь
   def favorites
       @posts = Post.all
       @liked_posts =[]
