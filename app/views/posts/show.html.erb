@@ -2,19 +2,20 @@
 
   <div class="col-md-8">
     <%= image_tag @post.image, class: 'image' %>
-    <!--    Автор может удалить свой пост-->
     <div class="delete">
       <% if current_user.posts.exists?(@post.id) %>
         <%= link_to fa_icon('trash'), post_path(@post), method: :delete, data: {confirm: 'Are you sure?'} %>
       <% end %>
       <% if user_signed_in? %>
-        <!--Если текущий пользователь не лайкнул этот пост, то может кликнуть лайк, иначе - видит кнопку "дизлайк"-->
+
         <% if @post.liked?(current_user) %>
           <%= link_to fa_icon('thumbs-down'), like_path(@post), method: :put %>
         <% else %>
           <%= link_to fa_icon('heart'), like_path(@post), method: :put %>
+
         <% end %>
       <% end %>
+
     </div>
   </div>
   <div class="col-md-4">
@@ -26,6 +27,7 @@
             <%= image_tag @post.user.avatar %>
           <% end %>
         <% end %>
+
       </div>
       <%= link_to @post.user.username, user_path(@post.user), class: 'username' %>
     </div>
@@ -38,15 +40,15 @@
         <% end %>
       <% end %>
     </div>
-<!--    рендерим комменты и форму нового комментария-->
+
     <div class="comment-container">
       <div>
-        <div class="post-comments buffer-top">
-          <div class="buffer-both">
-            <%= render partial: 'comments/comment',
-                       collection: @post.comments.except(@new_comment) %>
+          <div class="post-comments buffer-top">
+            <div class="buffer-both">
+              <%= render partial: 'comments/comment',
+                         collection: @post.comments.except(@new_comment) %>
+            </div>
           </div>
-        </div>
       </div>
     </div>
     <%= render partial: 'comments/form',

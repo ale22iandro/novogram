@@ -1,6 +1,5 @@
 <div class="comment">
   <%= comment.body %>
-<!--  если пользователь - автор поста либо автор комментария, то он может удалить этот комментрий-->
   <% if current_user == @post.user || current_user == comment.user %>
     <%= link_to(
             fa_icon('trash'), post_comment_path(comment.post, comment),

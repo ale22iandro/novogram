@@ -2,6 +2,12 @@ class CommentsController < ApplicationController
   before_action :set_post, only: [:create, :destroy]
   before_action :set_comment, only: :destroy
 
+
+
+  # GET /comments or /comments.json
+
+
+  # POST /comments or /comments.json
   def create
     # Создаём объект @new_comment из @post
     @new_comment = @post.comments.build(comment_params)
@@ -30,7 +36,7 @@ class CommentsController < ApplicationController
   end
 
   private
-
+  # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.find(params[:post_id])
   end

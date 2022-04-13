@@ -8,7 +8,7 @@ class Comment < ApplicationRecord
 
   # Это поле должно быть, только если не выполняется user.present? (у объекта на задан юзер)
   validates :user_name, presence: true, unless: -> { user.present? }
-  # у нас можно комментировать анонимам, переопределяем юзернейм, если пользователь не залогинился
+
   def username
     if user.present?
       user.name
