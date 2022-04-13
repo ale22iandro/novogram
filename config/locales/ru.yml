@@ -1,11 +1,14 @@
 ---
 ru:
+  comment:
+    size: "максимум 140 знаков"
   Unsubscribe: "Отписаться"
   Subscribe: "Подписаться"
   description: "Новый подписчик!"
   name: "Имя"
   home:
     create_post: 'Создать новый пост'
+    comments: "Комментарии:"
   post:
     comment:
       send: 'Новый комментарий'

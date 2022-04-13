@@ -5,6 +5,7 @@
     <div class="delete">
       <% if current_user.posts.exists?(@post.id) %>
         <%= link_to fa_icon('trash'), post_path(@post), method: :delete, data: {confirm: 'Are you sure?'} %>
+        <%= link_to fa_icon('edit'), edit_post_path(@post), data: { confirm: "Are you sure?"} %>
       <% end %>
       <% if user_signed_in? %>
 

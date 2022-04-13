@@ -7,10 +7,13 @@ fi:
 
   home:
     create_post: 'Posti post'
+    comments: "Commenti:"
   post:
     comment:
       send: 'Sentti'
       new_comment: 'Novvo Commenti:'
+    edit:
+      edit-description: "Eediti"
   activerecord:
     errors:
       messages:
@@ -224,3 +227,5 @@ fi:
   Subscribe: "Seuraa"
   description: "Uusi tilaaja"
   name: "Nimi"
+  comment:
+    size: "140"

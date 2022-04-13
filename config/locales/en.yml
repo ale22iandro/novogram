@@ -6,7 +6,10 @@ en:
   home:
     create_post: 'New post'
     file_field: 'Choose file'
+    comments: "Comments:"
   post:
+    edit:
+      edit-description: 'Edit description'
     comment:
       send: 'New comment'
       new_comment: 'New_comment'
@@ -225,3 +228,5 @@ en:
       short: "%d %b %I:%M %p"
     pm: pm
   name: "Name"
+  comment:
+    size: "140 characters max"

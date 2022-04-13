@@ -1,6 +1,6 @@
 <%= form_for [@post, comment] do |f| %>
   <div class="form-group">
-    <%= f.text_area :body,  class: 'form-control', placeholder: "максимум 140 знаков" %>
+    <%= f.text_area :body,  class: 'form-control', placeholder: t('comment.size')%>
   </div>
   <% unless user_signed_in? %>
     <div class="form-group">
