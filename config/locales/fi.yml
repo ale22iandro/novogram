@@ -4,7 +4,8 @@ fi:
     nav:
       next: 'Seuraava'
       prev: 'Edellinen'
-
+  search:
+    favorites: "suosikkeja"
   home:
     create_post: 'Posti post'
     comments: "Commenti:"

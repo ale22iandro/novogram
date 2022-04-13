@@ -3,6 +3,8 @@ en:
   Unsubscribe: "Unsubscribe"
   Subscribe: "Subscribe"
   description: "New subscriber!"
+  search:
+    favorites: "favorites"
   home:
     create_post: 'New post'
     file_field: 'Choose file'

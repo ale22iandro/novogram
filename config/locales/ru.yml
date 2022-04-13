@@ -1,7 +1,14 @@
 ---
 ru:
+  user:
+    Edit_profile: "Изменить профиль"
+    followers: "Подписчики"
+    following: "Подписки"
+    posts: "Посты"
   comment:
     size: "максимум 140 знаков"
+  search:
+    favorites: "Избранное"
   Unsubscribe: "Отписаться"
   Subscribe: "Подписаться"
   description: "Новый подписчик!"
