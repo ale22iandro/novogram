@@ -9,16 +9,19 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   def liked?(user)
-    !!self.likes.find{|like| like.user_id == user.id}
+    !!self.likes.find { |like| like.user_id == user.id }
   end
+
   def create_hash_tags
     extract_name_hash_tags.each do |name|
       hash_tags.create(name: name)
     end
   end
+
   def extract_name_hash_tags
-    description.to_s.scan(/#\w+/).map{|name| name.gsub("#", "")}
+    description.to_s.scan(/#\w+/).map { |name| name.gsub("#", "") }
   end
+
   def image_presence
     errors.add(:image, "can't be blank") unless image.attached?
   end

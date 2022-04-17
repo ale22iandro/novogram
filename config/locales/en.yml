@@ -233,3 +233,4 @@ en:
   name: "Name"
   comment:
     size: "140 characters max"
+    wrote: "written by"

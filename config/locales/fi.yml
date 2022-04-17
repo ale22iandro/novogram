@@ -231,3 +231,4 @@ fi:
   name: "Nimi"
   comment:
     size: "140"
+    wrote: "wrote"

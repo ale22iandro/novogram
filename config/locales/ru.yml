@@ -7,6 +7,7 @@ ru:
     posts: "Посты"
   comment:
     size: "максимум 140 знаков"
+    wrote: "написал"
   search:
     favorites: "Избранное"
   Unsubscribe: "Отписаться"
