@@ -7,6 +7,7 @@ fi:
   search:
     favorites: "suosikkeja"
   home:
+    edit_post: 'Edit post'
     create_post: 'Posti post'
     comments: "Commenti:"
   post:

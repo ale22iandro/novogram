@@ -7,6 +7,7 @@ en:
     favorites: "favorites"
   home:
     create_post: 'New post'
+    edit_post: 'Edit post'
     file_field: 'Choose file'
     comments: "Comments:"
   post:

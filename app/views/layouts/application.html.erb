@@ -42,6 +42,7 @@
       <% if user_signed_in? %>
         <%= link_to fa_icon('user'), user_path(current_user) %>
         <%= link_to fa_icon('sign-out'), destroy_user_session_path, method: :delete %>
+
       <% else %>
         <%= link_to fa_icon('sign-in'), new_user_session_path %>
       <% end %>

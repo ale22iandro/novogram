@@ -9,12 +9,11 @@
     </div>
 
     <div class="col-md-8 basic-info">
-      С нами с:
-      <%= l @user.created_at, format: :short %>
+      <%#= link_to fa_icon('send'), chat_path %>
+
       <div class="user-wrapper">
         <% if @user.id == current_user.id %>
           <h2 class="username"><%= current_user.username %></h2>
-
           <a class="edit-profile">
             <a class="edit-profile" href="<%= edit_user_path(current_user) %>">
               <button><%= t('user.Edit_profile') %></button>
@@ -22,23 +21,22 @@
         <% else %>
           <a class="edit-profile" href="">
             <% if current_user.subscribed?(@user) %>
-              <%= link_to  t('search.favorites'), unsubscribe_path(@user), method: :delete, class: 'btn btn-danger' %>
-
+              <%= link_to t('Unsubscribe'), unsubscribe_path(@user), method: :delete, class: 'btn btn-danger' %>
             <% else %>
               <%= link_to t('Subscribe'), subscribe_path(@user), method: :put, class: 'btn btn-primary' %>
             <% end %>
-
         <% end %>
         </a>
       </div>
       <ul class="posts">
-
         <li><span><%= @posts.count %></span> <%= t('user.posts') %></li>
-
         <li><span><%= @user.followers_count %></span> <%= t('user.followers') %></li>
         <li><span><%= @user.followed_count %></span> <%= t('user.following') %></li>
       </ul>
       <h2 class="name"><%= current_user.name %></h2>
+      <div>С нами с
+        <%= l @user.created_at, format: :short %>
+      </div>
       <%= link_to current_user.website, current_user.website, class: 'website' %>
     </div>
   </div>
@@ -48,8 +46,6 @@
     <i class="fa fa-th"></i>
     POSTS
   </a>
-
-
   <a class="tab" href="">
     <i class="fa fa-bookmark"></i>
     SAVED
