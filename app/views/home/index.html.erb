@@ -36,8 +36,11 @@
           <%= link_to post.user.username, user_path(post.user), class: 'username' %>
         </div>
       </div>
-
+<% if user_signed_in? %>
       <%= link_to (image_tag post.image, class: 'main-image'), post_path(post) %>
+        <% else %>
+        <%= link_to (image_tag post.image, class: 'main-image'), new_user_session_path %>
+        <% end %>
       <div class="description">
         <% post.description.to_s.split(' ').each do |word| %>
           <% if word.start_with?('#') %>

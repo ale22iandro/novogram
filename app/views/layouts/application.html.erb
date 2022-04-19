@@ -38,13 +38,13 @@
       <% end %>
     </div>
     <div class="user-section">
-      <%= link_to fa_icon('heart'), search_favorites_path %>
+      <%= link_to fa_icon('heart'), search_favorites_path, title: 'Favorite Posts' %>
       <% if user_signed_in? %>
-        <%= link_to fa_icon('user'), user_path(current_user) %>
-        <%= link_to fa_icon('sign-out'), destroy_user_session_path, method: :delete %>
+        <%= link_to fa_icon('user'), user_path(current_user), title: 'User Profile' %>
+        <%= link_to fa_icon('sign-out'), destroy_user_session_path, method: :delete, title: 'Sign Out' %>
 
       <% else %>
-        <%= link_to fa_icon('sign-in'), new_user_session_path %>
+        <%= link_to fa_icon('sign-in'), new_user_session_path, title: 'Login / Register' %>
       <% end %>
     </div>
   </div>

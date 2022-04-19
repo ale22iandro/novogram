@@ -4,7 +4,7 @@ en:
   Subscribe: "Subscribe"
   description: "New subscriber!"
   search:
-    favorites: "favorites"
+    favorites: "Favorites"
   home:
     create_post: 'New post'
     edit_post: 'Edit post'

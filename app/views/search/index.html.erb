@@ -3,6 +3,8 @@
     <h1>Top Posts</h1>
   <% else %>
     <h1>Oop! No matching posts ...</h1>
+    <%= @query %>
+
   <% end %>
   <%= render 'search/search' %>
 </div>

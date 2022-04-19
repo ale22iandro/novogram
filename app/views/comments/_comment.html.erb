@@ -3,7 +3,7 @@
   <% if current_user == @post.user || current_user == comment.user %>
     <%= link_to(
             fa_icon('trash'), post_comment_path(comment.post, comment),
-            method: :delete, data: {confirm: 'destroy_confirm'}
+            method: :delete, data: {confirm: 'destroy_confirm'}, title: 'Delete comment'
         ) %>
   <% end %>
   <% if comment.user.present? %>
