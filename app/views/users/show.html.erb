@@ -6,6 +6,7 @@
           <%= image_tag @user.avatar %>
         <% end %>
       </div>
+
     </div>
 
     <div class="col-md-8 basic-info">
@@ -33,10 +34,16 @@
         <li><span><%= @user.followers_count %></span> <%= t('user.followers') %></li>
         <li><span><%= @user.followed_count %></span> <%= t('user.following') %></li>
       </ul>
+
       <h2 class="name"><%= current_user.name %></h2>
       <div>С нами с
         <%= l @user.created_at, format: :short %>
       </div>
+      <% if @user.comments.present? %>
+        <div> Last comment: <%= @user.comments.last.body %>
+          <%= link_to fa_icon('arrow-right'), post_path(@user.comments.last.post_id) %>
+        </div>
+      <% end %>
       <%= link_to current_user.website, current_user.website, class: 'website' %>
     </div>
   </div>
