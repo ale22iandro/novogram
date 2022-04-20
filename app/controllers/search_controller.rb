@@ -9,13 +9,13 @@ class SearchController < ApplicationController
   end
   def favorites
       @posts = Post.all
-      @liked_posts =[]
+      liked_posts =[]
       @posts.each do |post|
         if post.liked?(current_user)
-          @liked_posts << post
+          liked_posts << post
         end
       end
-      @posts = @liked_posts
+      @posts = liked_posts
       render 'favorites'
   end
 end
