@@ -232,3 +232,5 @@ fi:
   comment:
     size: "140"
     wrote: "wrote"
+  user:
+    comments: "Commenti"

@@ -33,6 +33,7 @@
         <li><span><%= @posts.count %></span> <%= t('user.posts') %></li>
         <li><span><%= @user.followers_count %></span> <%= t('user.followers') %></li>
         <li><span><%= @user.followed_count %></span> <%= t('user.following') %></li>
+        <li><span><%= @user.comments.count %></span> <%= link_to t('user.comments'), comments_path %></li>
       </ul>
 
       <h2 class="name"><%= current_user.name %></h2>

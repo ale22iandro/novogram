@@ -5,7 +5,9 @@ class CommentsController < ApplicationController
 
 
   # GET /comments or /comments.json
-
+  def index
+    @comments = Comment.where(user_id: current_user.id)
+  end
 
   # POST /comments or /comments.json
   def create

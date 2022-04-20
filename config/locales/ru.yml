@@ -5,6 +5,7 @@ ru:
     followers: "Подписчики"
     following: "Подписки"
     posts: "Посты"
+    comments: "Комментарии"
   comment:
     size: "максимум 140 знаков"
     wrote: "написал"
