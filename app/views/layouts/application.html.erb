@@ -58,9 +58,11 @@
   <nav class="navbar d-flex">
     <ul>
       <li><%= link_to 'ABOUT US', "/about.html.erb" %></li>
-
-      <li><%= link_to 'PROFILES', users_path %></li>
-
+      <% if current_user.present? %>
+        <li><%= link_to 'PROFILES', users_path %></li>
+      <% else %>
+        <li><%= link_to 'PROFILES', new_user_registration_path %></li>
+      <% end %>
       <li>LANGUAGE</li>
     </ul>
     <p> © 2022 NOVOGRAM </p>
