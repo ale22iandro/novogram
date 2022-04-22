@@ -93,7 +93,29 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
+  # Базовый URL сайта для правильных ссылок в письмах
+  # ПРОПИСЫВАЙТЕ свой!
+  config.action_mailer.default_url_options = {host: 'https://boiling-peak-06768.herokuapp.com/'}
 
+  # Ошибки рассылки юзеру не показываем
+  config.action_mailer.raise_delivery_errors = false
+
+  # Делать рассылку писем (при false приложение только имитирует отправку)
+  config.action_mailer.perform_deliveries = true
+
+  # Устанавливаем протокол, по которому отправлять (SMTP)
+  config.action_mailer.delivery_method = :smtp
+
+  # А это для SendGrid
+  ActionMailer::Base.smtp_settings = {
+      :address        => 'smtp.sendgrid.net',
+      :port           => '587',
+      :authentication => :plain,
+      :user_name      => ENV['SENDGRID_USERNAME'],
+      :password       => ENV['SENDGRID_PASSWORD'],
+      :domain         => 'heroku.com',
+      :enable_starttls_auto => true
+  }
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
