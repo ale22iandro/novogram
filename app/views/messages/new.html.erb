@@ -1,0 +1,14 @@
+<%= form_for  model: @message do |f| %>
+  <div class="form-group">
+    <%= f.text_area :body,  class: 'form-control', placeholder: 'текст сообщения')%>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :sender_id, value: current_user.id, class: 'd-none' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :reciever_id, value: @user.id, class: 'd-none' %>
+  </div>
+  <div class="text-center">
+    <%= f.submit ('отправить соообщение'), class: 'btn btn-primary' %>
+  </div>
+<% end %>

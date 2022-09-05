@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     root to: 'home#index'
     resources :users
     resources :posts
+    resources :users do
+      resources :messages
+    end
 
     get 'search' => 'search#index'
     put '/post/:id/like', to: 'posts#like', as: 'like'

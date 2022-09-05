@@ -26,6 +26,7 @@
             <% else %>
               <%= link_to t('Subscribe'), subscribe_path(@user), method: :put, class: 'btn btn-primary' %>
             <% end %>
+          <%= link_to 'Send message', user_message_path(@user), class: 'btn btn-primary' %>
         <% end %>
         </a>
       </div>
