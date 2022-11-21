@@ -5,3 +5,4 @@
 bundle install
 rails s
 ```
+Действующий сайт: https://boiling-peak-06768.herokuapp.com/ (требуется зарегистрироваться либо использовать логин test@test.com и пароль 123456)
